@@ -220,10 +220,17 @@ class OxyPreload
   }
 
   /**
+   * @param string $hook_suffix Current admin page hook suffix.
+   *
    * @return void
    */
-  public function add_admin_assets()
+  public function add_admin_assets($hook_suffix = '')
   {
+    // Only load assets on the plugin's settings screen, not on every admin page.
+    if ($hook_suffix !== 'tools_page_oxyplug-preload-settings') {
+      return;
+    }
+
     wp_register_script('oxyplug-preload-admin-script', plugins_url('assets/js/admin-script.js', __FILE__), array('jquery'), self::OXYPLUG_PRELOAD_VERSION);
     wp_enqueue_script('oxyplug-preload-admin-script');
 
