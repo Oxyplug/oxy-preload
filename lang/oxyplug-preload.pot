@@ -1,0 +1,141 @@
+# Translation template for Oxyplug Preload.
+# Copyright (C) 2026 Oxyplug
+# This file is distributed under the same license as the Oxyplug Preload package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Oxyplug Preload 2.1.4\n"
+"Report-Msgid-Bugs-To: https://www.oxyplug.com\n"
+"POT-Creation-Date: 2026-06-02 09:57+0330\n"
+"PO-Revision-Date: 2026-06-02 09:57+0330\n"
+"Last-Translator: Oxyplug <support@oxyplug.com>\n"
+"Language-Team: Oxyplug\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Domain: oxyplug-preload\n"
+
+#: oxy-preload.php:243
+msgid "Invalid URL"
+msgstr ""
+
+#: oxy-preload.php:276 oxy-preload.php:297
+msgid "Settings"
+msgstr ""
+
+#: oxy-preload.php:293
+msgid "Oxyplug Preload"
+msgstr ""
+
+#: oxy-preload.php:308
+msgid "Need Help Or Have Questions?"
+msgstr ""
+
+#: oxy-preload.php:310
+msgid "Check our documentation."
+msgstr ""
+
+#: oxy-preload.php:319
+msgid "Script Preload"
+msgstr ""
+
+#: oxy-preload.php:321 oxy-preload.php:377
+msgid "Preload scripts"
+msgstr ""
+
+#: oxy-preload.php:323 oxy-preload.php:379 oxy-preload.php:438
+#: oxy-preload.php:493
+msgid "Learn More"
+msgstr ""
+
+#: oxy-preload.php:330
+msgid "Script URL"
+msgstr ""
+
+#: oxy-preload.php:369
+msgid "Add More Script URL"
+msgstr ""
+
+#: oxy-preload.php:375
+msgid "Style Preload"
+msgstr ""
+
+#: oxy-preload.php:386 oxy-preload.php:407
+msgid "Style URL"
+msgstr ""
+
+#: oxy-preload.php:425
+msgid "Add More Style URL"
+msgstr ""
+
+#: oxy-preload.php:434
+msgid "Font Preload"
+msgstr ""
+
+#: oxy-preload.php:436
+msgid "Preload fonts"
+msgstr ""
+
+#: oxy-preload.php:445 oxy-preload.php:466
+msgid "Font URL"
+msgstr ""
+
+#: oxy-preload.php:484
+msgid "Add More Font URL"
+msgstr ""
+
+#: oxy-preload.php:489
+msgid "Featured Image Preload"
+msgstr ""
+
+#: oxy-preload.php:491
+msgid "Preload featured image"
+msgstr ""
+
+#: oxy-preload.php:499
+msgid "Preload featured image automatically? (No need to add URLs)"
+msgstr ""
+
+#: oxy-preload.php:509
+msgid "Save"
+msgstr ""
+
+#: oxy-preload.php:513
+msgid "Saving...Please wait."
+msgstr ""
+
+#: oxy-preload.php:576
+msgid "Successfully saved."
+msgstr ""
+
+#: oxy-preload.php:579
+msgid "Wrong wpnonce. Refresh the page."
+msgstr ""
+
+#: oxy-preload.php:633
+msgid "Your server does not support .htaccess file."
+msgstr ""
+
+#: oxy-preload.php:643
+msgid "Could not read .htaccess file."
+msgstr ""
+
+#: oxy-preload.php:665
+msgid "Failed to create .htaccess backup file."
+msgstr ""
+
+#: oxy-preload.php:670
+msgid "Failed to write new .htaccess content."
+msgstr ""
+
+#: oxy-preload.php:675
+msgid "Site check failed after .htaccess update."
+msgstr ""
+
+#: oxy-preload.php:689
+msgid "Oxyplug Preload .htaccess update failed: "
+msgstr ""
+
+#: oxy-preload.php:693
+msgid "Oxyplug Preload .htaccess update failed."
+msgstr ""

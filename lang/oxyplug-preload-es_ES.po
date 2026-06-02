@@ -1,0 +1,106 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Oxyplug Preload 2.1.4\n"
+"Report-Msgid-Bugs-To: https://www.oxyplug.com\n"
+"POT-Creation-Date: 2026-06-02 09:57+0330\n"
+"PO-Revision-Date: 2026-06-02 09:57+0330\n"
+"Language-Team: Spanish\n"
+"Language: es_ES\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Domain: oxyplug-preload\n"
+
+msgid "Invalid URL"
+msgstr "URL no válida"
+
+msgid "Settings"
+msgstr "Ajustes"
+
+msgid "Oxyplug Preload"
+msgstr ""
+
+msgid "Need Help Or Have Questions?"
+msgstr "¿Necesitas ayuda o tienes preguntas?"
+
+msgid "Check our documentation."
+msgstr "Consulta nuestra documentación."
+
+msgid "Script Preload"
+msgstr "Precarga de scripts"
+
+msgid "Preload scripts"
+msgstr "Precargar scripts"
+
+msgid "Learn More"
+msgstr "Más información"
+
+msgid "Script URL"
+msgstr "URL del script"
+
+msgid "Add More Script URL"
+msgstr "Añadir más URL de script"
+
+msgid "Style Preload"
+msgstr "Precarga de estilos"
+
+msgid "Style URL"
+msgstr "URL del estilo"
+
+msgid "Add More Style URL"
+msgstr "Añadir más URL de estilo"
+
+msgid "Font Preload"
+msgstr "Precarga de fuentes"
+
+msgid "Preload fonts"
+msgstr "Precargar fuentes"
+
+msgid "Font URL"
+msgstr "URL de la fuente"
+
+msgid "Add More Font URL"
+msgstr "Añadir más URL de fuente"
+
+msgid "Featured Image Preload"
+msgstr "Precarga de imagen destacada"
+
+msgid "Preload featured image"
+msgstr "Precargar imagen destacada"
+
+msgid "Preload featured image automatically? (No need to add URLs)"
+msgstr "¿Precargar la imagen destacada automáticamente? (No es necesario añadir URLs)"
+
+msgid "Save"
+msgstr "Guardar"
+
+msgid "Saving...Please wait."
+msgstr "Guardando... Por favor, espera."
+
+msgid "Successfully saved."
+msgstr "Guardado correctamente."
+
+msgid "Wrong wpnonce. Refresh the page."
+msgstr "wpnonce incorrecto. Actualiza la página."
+
+msgid "Your server does not support .htaccess file."
+msgstr "Tu servidor no admite archivos .htaccess."
+
+msgid "Could not read .htaccess file."
+msgstr "No se pudo leer el archivo .htaccess."
+
+msgid "Failed to create .htaccess backup file."
+msgstr "No se pudo crear la copia de seguridad del archivo .htaccess."
+
+msgid "Failed to write new .htaccess content."
+msgstr "No se pudo escribir el nuevo contenido de .htaccess."
+
+msgid "Site check failed after .htaccess update."
+msgstr "La comprobación del sitio falló tras actualizar .htaccess."
+
+msgid "Oxyplug Preload .htaccess update failed: "
+msgstr "Error al actualizar .htaccess de Oxyplug Preload: "
+
+msgid "Oxyplug Preload .htaccess update failed."
+msgstr "Error al actualizar .htaccess de Oxyplug Preload."

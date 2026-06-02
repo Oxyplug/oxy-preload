@@ -4,7 +4,7 @@ Tags: lcp, core web vital, preload, resource hint, seo
 Requires at least: 4.9
 Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 2.1.4
+Stable tag: 2.1.5
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -26,6 +26,10 @@ You can also manually preload fonts, CSS, and JavaScript files in the settings f
 6. Featured image preload tag.
 
 == Changelog ==
+= 2.1.5 =
+*Add translations for Spanish, French, German, Italian, and Brazilian Portuguese*
+*Load the plugin text domain so bundled translations are applied*
+
 = 2.1.4 =
 *Fix preloaded featured image size mismatch that could cause a duplicate image download and hurt LCP*
 *Fix fatal error on the front end when checking for the Oxyplug Image plugin*

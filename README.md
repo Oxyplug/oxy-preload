@@ -85,6 +85,10 @@ assets/images/           Icons used in the admin UI
 
 See [`readme.txt`](readme.txt) for the full changelog. Latest:
 
+### 2.1.5
+- Add translations for Spanish, French, German, Italian, and Brazilian Portuguese.
+- Load the plugin text domain so bundled translations are applied.
+
 ### 2.1.4
 - Fix preloaded featured-image size mismatch that could cause a duplicate image download and hurt LCP.
 - Fix a fatal error on the front end when checking for the Oxyplug Image plugin.

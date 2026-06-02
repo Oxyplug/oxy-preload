@@ -1,0 +1,106 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Oxyplug Preload 2.1.4\n"
+"Report-Msgid-Bugs-To: https://www.oxyplug.com\n"
+"POT-Creation-Date: 2026-06-02 09:57+0330\n"
+"PO-Revision-Date: 2026-06-02 09:57+0330\n"
+"Language-Team: Italian\n"
+"Language: it_IT\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Domain: oxyplug-preload\n"
+
+msgid "Invalid URL"
+msgstr "URL non valido"
+
+msgid "Settings"
+msgstr "Impostazioni"
+
+msgid "Oxyplug Preload"
+msgstr ""
+
+msgid "Need Help Or Have Questions?"
+msgstr "Hai bisogno di aiuto o domande?"
+
+msgid "Check our documentation."
+msgstr "Consulta la nostra documentazione."
+
+msgid "Script Preload"
+msgstr "Precaricamento script"
+
+msgid "Preload scripts"
+msgstr "Precarica gli script"
+
+msgid "Learn More"
+msgstr "Scopri di più"
+
+msgid "Script URL"
+msgstr "URL dello script"
+
+msgid "Add More Script URL"
+msgstr "Aggiungi un altro URL script"
+
+msgid "Style Preload"
+msgstr "Precaricamento stili"
+
+msgid "Style URL"
+msgstr "URL dello stile"
+
+msgid "Add More Style URL"
+msgstr "Aggiungi un altro URL stile"
+
+msgid "Font Preload"
+msgstr "Precaricamento font"
+
+msgid "Preload fonts"
+msgstr "Precarica i font"
+
+msgid "Font URL"
+msgstr "URL del font"
+
+msgid "Add More Font URL"
+msgstr "Aggiungi un altro URL font"
+
+msgid "Featured Image Preload"
+msgstr "Precaricamento immagine in evidenza"
+
+msgid "Preload featured image"
+msgstr "Precarica l’immagine in evidenza"
+
+msgid "Preload featured image automatically? (No need to add URLs)"
+msgstr "Precaricare automaticamente l’immagine in evidenza? (Nessun URL da aggiungere)"
+
+msgid "Save"
+msgstr "Salva"
+
+msgid "Saving...Please wait."
+msgstr "Salvataggio... Attendere prego."
+
+msgid "Successfully saved."
+msgstr "Salvato con successo."
+
+msgid "Wrong wpnonce. Refresh the page."
+msgstr "wpnonce errato. Aggiorna la pagina."
+
+msgid "Your server does not support .htaccess file."
+msgstr "Il tuo server non supporta il file .htaccess."
+
+msgid "Could not read .htaccess file."
+msgstr "Impossibile leggere il file .htaccess."
+
+msgid "Failed to create .htaccess backup file."
+msgstr "Impossibile creare il file di backup .htaccess."
+
+msgid "Failed to write new .htaccess content."
+msgstr "Impossibile scrivere il nuovo contenuto .htaccess."
+
+msgid "Site check failed after .htaccess update."
+msgstr "Controllo del sito non riuscito dopo l’aggiornamento di .htaccess."
+
+msgid "Oxyplug Preload .htaccess update failed: "
+msgstr "Aggiornamento .htaccess di Oxyplug Preload non riuscito: "
+
+msgid "Oxyplug Preload .htaccess update failed."
+msgstr "Aggiornamento .htaccess di Oxyplug Preload non riuscito."

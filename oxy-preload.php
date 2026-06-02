@@ -3,7 +3,7 @@
  * Plugin Name: Oxyplug Preload
  * Plugin URI: https://www.oxyplug.com/products/oxy-preload
  * Description: Preload post/page featured images and product images to enhance the Largest Contentful Paint (LCP) and achieve a better Core Web Vitals (CWV) score in Google's Lighthouse. Additionally, the tool supports preloading fonts, CSS, and JavaScript files when specified manually, allowing for even greater optimization of page load performance.
- * Version: 2.1.4
+ * Version: 2.1.5
  * Author: Oxyplug
  * Author URI: https://www.oxyplug.com
  * Requires PHP: 7.4
@@ -29,7 +29,7 @@ class OxyPreload
   protected string $imgurl;
   protected string $srcset;
   protected string $sizes;
-  const OXYPLUG_PRELOAD_VERSION = '2.1.4';
+  const OXYPLUG_PRELOAD_VERSION = '2.1.5';
 
   public function __construct()
   {
@@ -40,6 +40,9 @@ class OxyPreload
     // Init on activate
     register_activation_hook(__FILE__, array($this, 'activate_it'));
     add_action('admin_init', array($this, 'init'));
+
+    // Load translations from the bundled /lang directory
+    add_action('init', array($this, 'oxyplug_preload_load_textdomain'));
 
     // Add preload tag
     add_action('plugins_loaded', array($this, 'check_required_plugin'));
@@ -73,6 +76,16 @@ class OxyPreload
 
     // Set a transient to indicate an update has occurred
     set_transient('oxyplug_preload_updated', true, 30);
+  }
+
+  /**
+   * Load the plugin text domain so bundled translations in /lang are applied.
+   *
+   * @return void
+   */
+  public function oxyplug_preload_load_textdomain()
+  {
+    load_plugin_textdomain('oxyplug-preload', false, dirname(plugin_basename(__FILE__)) . '/lang/');
   }
 
   public function init()

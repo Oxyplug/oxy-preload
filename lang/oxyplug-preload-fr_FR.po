@@ -1,0 +1,106 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Oxyplug Preload 2.1.4\n"
+"Report-Msgid-Bugs-To: https://www.oxyplug.com\n"
+"POT-Creation-Date: 2026-06-02 09:57+0330\n"
+"PO-Revision-Date: 2026-06-02 09:57+0330\n"
+"Language-Team: French\n"
+"Language: fr_FR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Domain: oxyplug-preload\n"
+
+msgid "Invalid URL"
+msgstr "URL non valide"
+
+msgid "Settings"
+msgstr "Réglages"
+
+msgid "Oxyplug Preload"
+msgstr ""
+
+msgid "Need Help Or Have Questions?"
+msgstr "Besoin d’aide ou des questions ?"
+
+msgid "Check our documentation."
+msgstr "Consultez notre documentation."
+
+msgid "Script Preload"
+msgstr "Préchargement des scripts"
+
+msgid "Preload scripts"
+msgstr "Précharger les scripts"
+
+msgid "Learn More"
+msgstr "En savoir plus"
+
+msgid "Script URL"
+msgstr "URL du script"
+
+msgid "Add More Script URL"
+msgstr "Ajouter une autre URL de script"
+
+msgid "Style Preload"
+msgstr "Préchargement des styles"
+
+msgid "Style URL"
+msgstr "URL du style"
+
+msgid "Add More Style URL"
+msgstr "Ajouter une autre URL de style"
+
+msgid "Font Preload"
+msgstr "Préchargement des polices"
+
+msgid "Preload fonts"
+msgstr "Précharger les polices"
+
+msgid "Font URL"
+msgstr "URL de la police"
+
+msgid "Add More Font URL"
+msgstr "Ajouter une autre URL de police"
+
+msgid "Featured Image Preload"
+msgstr "Préchargement de l’image mise en avant"
+
+msgid "Preload featured image"
+msgstr "Précharger l’image mise en avant"
+
+msgid "Preload featured image automatically? (No need to add URLs)"
+msgstr "Précharger automatiquement l’image mise en avant ? (Aucune URL à ajouter)"
+
+msgid "Save"
+msgstr "Enregistrer"
+
+msgid "Saving...Please wait."
+msgstr "Enregistrement... Veuillez patienter."
+
+msgid "Successfully saved."
+msgstr "Enregistré avec succès."
+
+msgid "Wrong wpnonce. Refresh the page."
+msgstr "wpnonce incorrect. Actualisez la page."
+
+msgid "Your server does not support .htaccess file."
+msgstr "Votre serveur ne prend pas en charge le fichier .htaccess."
+
+msgid "Could not read .htaccess file."
+msgstr "Impossible de lire le fichier .htaccess."
+
+msgid "Failed to create .htaccess backup file."
+msgstr "Échec de la création du fichier de sauvegarde .htaccess."
+
+msgid "Failed to write new .htaccess content."
+msgstr "Échec de l’écriture du nouveau contenu .htaccess."
+
+msgid "Site check failed after .htaccess update."
+msgstr "La vérification du site a échoué après la mise à jour de .htaccess."
+
+msgid "Oxyplug Preload .htaccess update failed: "
+msgstr "Échec de la mise à jour du .htaccess d’Oxyplug Preload : "
+
+msgid "Oxyplug Preload .htaccess update failed."
+msgstr "Échec de la mise à jour du .htaccess d’Oxyplug Preload."
