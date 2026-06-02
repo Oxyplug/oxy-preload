@@ -1,0 +1,30 @@
+# Dependencies
+/node_modules/
+
+# Note: assets/js/dist is intentionally committed — the plugin loads it at runtime.
+
+# Environment
+.env
+.env.*
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor / IDE
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Build / packaging artifacts
+/build/
+/dist/
+*.zip
+
+# Backups created by the plugin
+*.oxybackup

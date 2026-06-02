@@ -1,0 +1,26 @@
+{
+  "name": "oxyplug-preload",
+  "version": "2.1.4",
+  "description": "Preload featured images, fonts, CSS, and JavaScript to improve LCP and Core Web Vitals in WordPress.",
+  "license": "GPL-2.0-or-later",
+  "homepage": "https://www.oxyplug.com/products/oxy-preload",
+  "keywords": [
+    "wordpress",
+    "wordpress-plugin",
+    "preload",
+    "lcp",
+    "core-web-vitals",
+    "performance"
+  ],
+  "dependencies": {
+    "@material/web": "2.2.0"
+  },
+  "devDependencies": {
+    "vite": "5.4.10"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  }
+}

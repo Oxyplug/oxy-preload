@@ -1,0 +1,52 @@
+import{_ as r,E as a,x as s,r as f,i as u,t as _}from"./lit-element-DOwO35PZ.js";import"./ripple-ByX8ACcL.js";import{n as o}from"./property-D4JB6CpA.js";import{m as g,d as x,r as $,c,a as I}from"./element-internals-Cm1FnwW7.js";import{i as p,u as w}from"./static-CGGnWBV9.js";import{s as k}from"./form-submitter-azznkiVA.js";/**
+ * @license
+ * Copyright 2022 Google LLC
+ * SPDX-License-Identifier: Apache-2.0
+ */function h(i,e=!0){return e&&getComputedStyle(i).getPropertyValue("direction").trim()==="rtl"}/**
+ * @license
+ * Copyright 2018 Google LLC
+ * SPDX-License-Identifier: Apache-2.0
+ */const R=g(x(f));class t extends R{get name(){return this.getAttribute("name")??""}set name(e){this.setAttribute("name",e)}get form(){return this[c].form}get labels(){return this[c].labels}constructor(){super(),this.disabled=!1,this.softDisabled=!1,this.flipIconInRtl=!1,this.href="",this.target="",this.ariaLabelSelected="",this.toggle=!1,this.selected=!1,this.type="submit",this.value="",this.flipIcon=h(this,this.flipIconInRtl),this.addEventListener("click",this.handleClick.bind(this))}willUpdate(){this.href&&(this.disabled=!1,this.softDisabled=!1)}render(){const e=this.href?p`div`:p`button`,{ariaLabel:d,ariaHasPopup:v,ariaExpanded:b}=this,m=d&&this.ariaLabelSelected,y=this.toggle?this.selected:a;let l=a;return this.href||(l=m&&this.selected?this.ariaLabelSelected:d),w`<${e}
+        class="icon-button ${I(this.getRenderClasses())}"
+        id="button"
+        aria-label="${l||a}"
+        aria-haspopup="${!this.href&&v||a}"
+        aria-expanded="${!this.href&&b||a}"
+        aria-pressed="${y}"
+        aria-disabled=${!this.href&&this.softDisabled||a}
+        ?disabled="${!this.href&&this.disabled}"
+        @click="${this.handleClickOnChild}">
+        ${this.renderFocusRing()}
+        ${this.renderRipple()}
+        ${this.selected?a:this.renderIcon()}
+        ${this.selected?this.renderSelectedIcon():a}
+        ${this.renderTouchTarget()}
+        ${this.href&&this.renderLink()}
+  </${e}>`}renderLink(){const{ariaLabel:e}=this;return s`
+      <a
+        class="link"
+        id="link"
+        href="${this.href}"
+        target="${this.target||a}"
+        aria-label="${e||a}"></a>
+    `}getRenderClasses(){return{"flip-icon":this.flipIcon,selected:this.toggle&&this.selected}}renderIcon(){return s`<span class="icon"><slot></slot></span>`}renderSelectedIcon(){return s`<span class="icon icon--selected"
+      ><slot name="selected"><slot></slot></slot
+    ></span>`}renderTouchTarget(){return s`<span class="touch"></span>`}renderFocusRing(){return s`<md-focus-ring
+      part="focus-ring"
+      for=${this.href?"link":"button"}></md-focus-ring>`}renderRipple(){const e=!this.href&&(this.disabled||this.softDisabled);return s`<md-ripple
+      for=${this.href?"link":a}
+      ?disabled="${e}"></md-ripple>`}connectedCallback(){this.flipIcon=h(this,this.flipIconInRtl),super.connectedCallback()}handleClick(e){if(!this.href&&this.softDisabled){e.stopImmediatePropagation(),e.preventDefault();return}}async handleClickOnChild(e){await 0,!(!this.toggle||this.disabled||this.softDisabled||e.defaultPrevented)&&(this.selected=!this.selected,this.dispatchEvent(new InputEvent("input",{bubbles:!0,composed:!0})),this.dispatchEvent(new Event("change",{bubbles:!0})))}}k(t);t.formAssociated=!0;t.shadowRootOptions={mode:"open",delegatesFocus:!0};r([o({type:Boolean,reflect:!0})],t.prototype,"disabled",void 0);r([o({type:Boolean,attribute:"soft-disabled",reflect:!0})],t.prototype,"softDisabled",void 0);r([o({type:Boolean,attribute:"flip-icon-in-rtl"})],t.prototype,"flipIconInRtl",void 0);r([o()],t.prototype,"href",void 0);r([o()],t.prototype,"target",void 0);r([o({attribute:"aria-label-selected"})],t.prototype,"ariaLabelSelected",void 0);r([o({type:Boolean})],t.prototype,"toggle",void 0);r([o({type:Boolean,reflect:!0})],t.prototype,"selected",void 0);r([o()],t.prototype,"type",void 0);r([o({reflect:!0})],t.prototype,"value",void 0);r([$()],t.prototype,"flipIcon",void 0);/**
+ * @license
+ * Copyright 2024 Google LLC
+ * SPDX-License-Identifier: Apache-2.0
+ */const C=u`:host{display:inline-flex;outline:none;-webkit-tap-highlight-color:rgba(0,0,0,0);height:var(--_container-height);width:var(--_container-width);justify-content:center}:host([touch-target=wrapper]){margin:max(0px,(48px - var(--_container-height))/2) max(0px,(48px - var(--_container-width))/2)}md-focus-ring{--md-focus-ring-shape-start-start: var(--_container-shape-start-start);--md-focus-ring-shape-start-end: var(--_container-shape-start-end);--md-focus-ring-shape-end-end: var(--_container-shape-end-end);--md-focus-ring-shape-end-start: var(--_container-shape-end-start)}:host(:is([disabled],[soft-disabled])){pointer-events:none}.icon-button{place-items:center;background:none;border:none;box-sizing:border-box;cursor:pointer;display:flex;place-content:center;outline:none;padding:0;position:relative;text-decoration:none;user-select:none;z-index:0;flex:1;border-start-start-radius:var(--_container-shape-start-start);border-start-end-radius:var(--_container-shape-start-end);border-end-start-radius:var(--_container-shape-end-start);border-end-end-radius:var(--_container-shape-end-end)}.icon ::slotted(*){font-size:var(--_icon-size);height:var(--_icon-size);width:var(--_icon-size);font-weight:inherit}md-ripple{z-index:-1;border-start-start-radius:var(--_container-shape-start-start);border-start-end-radius:var(--_container-shape-start-end);border-end-start-radius:var(--_container-shape-end-start);border-end-end-radius:var(--_container-shape-end-end)}.flip-icon .icon{transform:scaleX(-1)}.icon{display:inline-flex}.link{height:100%;outline:none;position:absolute;width:100%}.touch{position:absolute;height:max(48px,100%);width:max(48px,100%)}:host([touch-target=none]) .touch{display:none}@media(forced-colors: active){:host(:is([disabled],[soft-disabled])){--_disabled-icon-color: GrayText;--_disabled-icon-opacity: 1}}
+`;/**
+ * @license
+ * Copyright 2024 Google LLC
+ * SPDX-License-Identifier: Apache-2.0
+ */const L=u`:host{--_disabled-icon-color: var(--md-icon-button-disabled-icon-color, var(--md-sys-color-on-surface, #1d1b20));--_disabled-icon-opacity: var(--md-icon-button-disabled-icon-opacity, 0.38);--_icon-size: var(--md-icon-button-icon-size, 24px);--_selected-focus-icon-color: var(--md-icon-button-selected-focus-icon-color, var(--md-sys-color-primary, #6750a4));--_selected-hover-icon-color: var(--md-icon-button-selected-hover-icon-color, var(--md-sys-color-primary, #6750a4));--_selected-hover-state-layer-color: var(--md-icon-button-selected-hover-state-layer-color, var(--md-sys-color-primary, #6750a4));--_selected-hover-state-layer-opacity: var(--md-icon-button-selected-hover-state-layer-opacity, 0.08);--_selected-icon-color: var(--md-icon-button-selected-icon-color, var(--md-sys-color-primary, #6750a4));--_selected-pressed-icon-color: var(--md-icon-button-selected-pressed-icon-color, var(--md-sys-color-primary, #6750a4));--_selected-pressed-state-layer-color: var(--md-icon-button-selected-pressed-state-layer-color, var(--md-sys-color-primary, #6750a4));--_selected-pressed-state-layer-opacity: var(--md-icon-button-selected-pressed-state-layer-opacity, 0.12);--_state-layer-height: var(--md-icon-button-state-layer-height, 40px);--_state-layer-shape: var(--md-icon-button-state-layer-shape, var(--md-sys-shape-corner-full, 9999px));--_state-layer-width: var(--md-icon-button-state-layer-width, 40px);--_focus-icon-color: var(--md-icon-button-focus-icon-color, var(--md-sys-color-on-surface-variant, #49454f));--_hover-icon-color: var(--md-icon-button-hover-icon-color, var(--md-sys-color-on-surface-variant, #49454f));--_hover-state-layer-color: var(--md-icon-button-hover-state-layer-color, var(--md-sys-color-on-surface-variant, #49454f));--_hover-state-layer-opacity: var(--md-icon-button-hover-state-layer-opacity, 0.08);--_icon-color: var(--md-icon-button-icon-color, var(--md-sys-color-on-surface-variant, #49454f));--_pressed-icon-color: var(--md-icon-button-pressed-icon-color, var(--md-sys-color-on-surface-variant, #49454f));--_pressed-state-layer-color: var(--md-icon-button-pressed-state-layer-color, var(--md-sys-color-on-surface-variant, #49454f));--_pressed-state-layer-opacity: var(--md-icon-button-pressed-state-layer-opacity, 0.12);--_container-shape-start-start: 0;--_container-shape-start-end: 0;--_container-shape-end-end: 0;--_container-shape-end-start: 0;--_container-height: 0;--_container-width: 0;height:var(--_state-layer-height);width:var(--_state-layer-width)}:host([touch-target=wrapper]){margin:max(0px,(48px - var(--_state-layer-height))/2) max(0px,(48px - var(--_state-layer-width))/2)}md-focus-ring{--md-focus-ring-shape-start-start: var(--_state-layer-shape);--md-focus-ring-shape-start-end: var(--_state-layer-shape);--md-focus-ring-shape-end-end: var(--_state-layer-shape);--md-focus-ring-shape-end-start: var(--_state-layer-shape)}.standard{background-color:rgba(0,0,0,0);color:var(--_icon-color);--md-ripple-hover-color: var(--_hover-state-layer-color);--md-ripple-hover-opacity: var(--_hover-state-layer-opacity);--md-ripple-pressed-color: var(--_pressed-state-layer-color);--md-ripple-pressed-opacity: var(--_pressed-state-layer-opacity)}.standard:hover{color:var(--_hover-icon-color)}.standard:focus{color:var(--_focus-icon-color)}.standard:active{color:var(--_pressed-icon-color)}.standard:is(:disabled,[aria-disabled=true]){color:var(--_disabled-icon-color)}md-ripple{border-radius:var(--_state-layer-shape)}.standard:is(:disabled,[aria-disabled=true]){opacity:var(--_disabled-icon-opacity)}.selected{--md-ripple-hover-color: var(--_selected-hover-state-layer-color);--md-ripple-hover-opacity: var(--_selected-hover-state-layer-opacity);--md-ripple-pressed-color: var(--_selected-pressed-state-layer-color);--md-ripple-pressed-opacity: var(--_selected-pressed-state-layer-opacity)}.selected:not(:disabled,[aria-disabled=true]){color:var(--_selected-icon-color)}.selected:not(:disabled,[aria-disabled=true]):hover{color:var(--_selected-hover-icon-color)}.selected:not(:disabled,[aria-disabled=true]):focus{color:var(--_selected-focus-icon-color)}.selected:not(:disabled,[aria-disabled=true]):active{color:var(--_selected-pressed-icon-color)}
+`;/**
+ * @license
+ * Copyright 2021 Google LLC
+ * SPDX-License-Identifier: Apache-2.0
+ */let n=class extends t{getRenderClasses(){return{...super.getRenderClasses(),standard:!0}}};n.styles=[C,L];n=r([_("md-icon-button")],n);
