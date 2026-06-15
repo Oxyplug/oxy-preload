@@ -1,0 +1,57 @@
+name: WP Plugin Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Checkout repo
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # 2. Validate version consistency (PHP vs readme)
+      - name: Validate version
+        run: |
+          PHP_VERSION=$(grep -E "Version:[[:space:]]*[0-9]" oxy-preload.php | head -n 1 | sed -E 's/.*Version:[[:space:]]*//' | tr -d '\r' | xargs)
+          README_VERSION=$(grep "Stable tag:" readme.txt | head -n 1 | awk '{print $3}' | tr -d '\r' | xargs)
+
+          echo "PHP Version: $PHP_VERSION"
+          echo "Readme Version: $README_VERSION"
+
+          if [ "$PHP_VERSION" != "$README_VERSION" ]; then
+            echo "❌ Version mismatch between plugin file and readme.txt"
+            exit 1
+          fi
+
+          echo "VERSION=$PHP_VERSION" >> $GITHUB_ENV
+
+      # 3. Checkout SVN (needed by 10up internally)
+      - name: Deploy to WordPress.org SVN
+        uses: 10up/action-wordpress-plugin-deploy@stable
+        env:
+          SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
+          SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
+          SLUG: oxyplug-preload
+
+      # 4. Create GitHub tag (only if new version)
+      - name: Create Git tag
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+
+          git tag "v${VERSION}" || echo "Tag already exists"
+          git push origin "v${VERSION}" || echo "Tag push skipped"
+
+      # 5. Create GitHub Release
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ env.VERSION }}
+          name: Release ${{ env.VERSION }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
