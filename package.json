@@ -1,6 +1,6 @@
 {
   "name": "oxyplug-preload",
-  "version": "2.1.4",
+  "version": "2.2.0",
   "description": "Preload featured images, fonts, CSS, and JavaScript to improve LCP and Core Web Vitals in WordPress.",
   "license": "GPL-2.0-or-later",
   "homepage": "https://www.oxyplug.com/products/oxy-preload",

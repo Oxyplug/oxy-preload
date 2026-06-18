@@ -3,7 +3,7 @@
  * Plugin Name: Oxyplug Preload
  * Plugin URI: https://www.oxyplug.com/products/oxy-preload
  * Description: Preload post/page featured images and product images to enhance the Largest Contentful Paint (LCP) and achieve a better Core Web Vitals (CWV) score in Google's Lighthouse. Additionally, the tool supports preloading fonts, CSS, and JavaScript files when specified manually, allowing for even greater optimization of page load performance.
- * Version: 2.1.5
+ * Version: 2.2.0
  * Author: Oxyplug
  * Author URI: https://www.oxyplug.com
  * Requires PHP: 7.4
@@ -39,6 +39,7 @@ class OxyPreload
 
     // Init on activate
     register_activation_hook(__FILE__, array($this, 'activate_it'));
+    register_deactivation_hook(__FILE__, array($this, 'deactivate_it'));
     add_action('admin_init', array($this, 'init'));
 
     // Load translations from the bundled /lang directory
@@ -76,6 +77,45 @@ class OxyPreload
 
     // Set a transient to indicate an update has occurred
     set_transient('oxyplug_preload_updated', true, 30);
+  }
+
+  /**
+   * Remove the static `.htaccess` preload block on deactivation.
+   *
+   * The preload `Link` headers live in `.htaccess`, so they would keep being
+   * emitted while the plugin is inactive. Strip the block on deactivation, but
+   * leave the `_oxyplug_preload_*` options intact so settings survive a
+   * reactivation (the block is regenerated when preloads are next saved).
+   *
+   * @return void
+   */
+  public function deactivate_it()
+  {
+    $htaccess_path = ABSPATH . '.htaccess';
+
+    global $wp_filesystem;
+    if (!$wp_filesystem) {
+      require_once ABSPATH . 'wp-admin/includes/class-wp-filesystem-base.php';
+      require_once ABSPATH . 'wp-admin/includes/class-wp-filesystem-direct.php';
+      $wp_filesystem = new \WP_Filesystem_Direct(null);
+    }
+
+    if (!$wp_filesystem->exists($htaccess_path)
+      || !$wp_filesystem->is_readable($htaccess_path)
+      || !$wp_filesystem->is_writable($htaccess_path)) {
+      return;
+    }
+
+    $current_content = $wp_filesystem->get_contents($htaccess_path);
+    if ($current_content === false) {
+      return;
+    }
+
+    $cleaned = $this->strip_oxyplug_section($current_content);
+
+    if ($cleaned !== $current_content) {
+      $wp_filesystem->put_contents($htaccess_path, rtrim($cleaned) . "\n");
+    }
   }
 
   /**
@@ -167,9 +207,9 @@ class OxyPreload
           ?>
           <link rel="preload"
                 as="image"
-                href="<?php esc_attr_e($this->imgurl) ?>"
-                imagesrcset="<?php esc_attr_e($this->srcset) ?>"
-                imagesizes="<?php esc_attr_e($this->sizes) ?>"
+                href="<?php echo esc_url($this->imgurl) ?>"
+                imagesrcset="<?php echo esc_attr($this->srcset) ?>"
+                imagesizes="<?php echo esc_attr($this->sizes) ?>"
                 fetchpriority="high">
           <?php
         }
@@ -532,6 +572,11 @@ class OxyPreload
       $sanitized_nonce = sanitize_text_field(wp_unslash($_POST['oxyplug_preload_save_preloads_nonce']));
       if (wp_verify_nonce($sanitized_nonce, 'oxyplug_preload_save_preloads')) {
 
+        // A nonce proves intent, not authorization — require the capability too.
+        if (!current_user_can('manage_options')) {
+          wp_send_json(array('messages' => array(esc_html__('Permission denied.', 'oxyplug-preload'))), 403);
+        }
+
         // Featured image preload
         $preload_featured_image = empty($_POST['featured_image_preload']) ? 'false' : 'true';
         $this->oxyplug_preload_update_option('_oxyplug_preload_featured_image', $preload_featured_image);
@@ -588,6 +633,26 @@ class OxyPreload
   }
 
   /**
+   * Remove the `# BEGIN Oxyplug Preload ... # END Oxyplug Preload` block from
+   * a chunk of .htaccess content.
+   *
+   * This is the single source of truth for the marker pattern, shared by
+   * update_htaccess() and deactivate_it(). On a regex failure the original
+   * content is returned unchanged so a corrupt match never blanks the file.
+   *
+   * @param string $content
+   *
+   * @return string
+   */
+  private function strip_oxyplug_section($content): string
+  {
+    $pattern = '/\n*# BEGIN Oxyplug Preload\n.*?# END Oxyplug Preload\n*/s';
+    $stripped = preg_replace($pattern, '', $content);
+
+    return $stripped === null ? $content : $stripped;
+  }
+
+  /**
    * Generate .htaccess content for preloading
    *
    * @param array $preloads Array of preload URLs grouped by type
@@ -602,6 +667,10 @@ class OxyPreload
       foreach ($urls as $url) {
         $htaccess_content .= "      Header append Link \"<$url>; rel=preload; as=$type";
         if ($type == 'font') {
+          $mime = $this->font_mime_type($url);
+          if ($mime) {
+            $htaccess_content .= "; type=$mime";
+          }
           $htaccess_content .= '; crossorigin';
         }
         $htaccess_content .= "\"\n";
@@ -618,6 +687,32 @@ class OxyPreload
     }
 
     return $htaccess_content;
+  }
+
+  /**
+   * Resolve a font URL's MIME type from its file extension.
+   *
+   * Declaring `type=` on a font preload lets the browser skip the hint when it
+   * can't use that format, and avoids the double-fetch some browsers do when
+   * the type is omitted.
+   *
+   * @param string $url
+   *
+   * @return string Empty string when the extension is unknown.
+   */
+  private function font_mime_type($url): string
+  {
+    $extension = strtolower(pathinfo(parse_url($url, PHP_URL_PATH) ?? $url, PATHINFO_EXTENSION));
+
+    $mime_types = array(
+      'woff2' => 'font/woff2',
+      'woff'  => 'font/woff',
+      'ttf'   => 'font/ttf',
+      'otf'   => 'font/otf',
+      'eot'   => 'application/vnd.ms-fontobject',
+    );
+
+    return $mime_types[$extension] ?? '';
   }
 
   /**
@@ -651,9 +746,7 @@ class OxyPreload
         }
 
         // Remove existing Oxyplug Preload section
-        $pattern = '/\n*# BEGIN Oxyplug Preload\n.*?# END Oxyplug Preload\n*/s';
-        $current_content = preg_replace($pattern, '', $current_content);
-        $current_content = rtrim($current_content);
+        $current_content = rtrim($this->strip_oxyplug_section($current_content));
 
         if (!empty($htaccess_content)) {
           // Create new section with headers
@@ -746,7 +839,7 @@ class OxyPreload
   private function is_server(array $servers): bool
   {
     $server = '';
-    $server_software = strtolower(sanitize_text_field($_SERVER['SERVER_SOFTWARE']));
+    $server_software = strtolower(sanitize_text_field($_SERVER['SERVER_SOFTWARE'] ?? ''));
     if (strpos($server_software, 'apache') !== false) {
       $server = 'apache';
     } elseif (strpos($server_software, 'litespeed') !== false) {

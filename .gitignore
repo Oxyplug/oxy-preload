@@ -2,11 +2,18 @@
 CHANGES_REPORT.md
 CODE_REVIEW.md
 GITHUB_ABOUT.md
+preload-SUGGESTIONS.md
 
 # Dependencies
 /node_modules/
+/vendor/
 
 # Note: assets/js/dist is intentionally committed — the plugin loads it at runtime.
+
+# PHPUnit
+/.phpunit.cache/
+.phpunit.result.cache
+phpunit.phar
 
 # Environment
 .env
