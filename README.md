@@ -3,7 +3,7 @@
 > Preload featured images, fonts, CSS, and JavaScript to improve **Largest Contentful Paint (LCP)** and your **Core Web Vitals (CWV)** score in Google Lighthouse.
 
 [![License: GPL v2+](https://img.shields.io/badge/License-GPLv2%2B-blue.svg)](https://www.gnu.org/licenses/gpl-2.0.html)
-![WordPress tested](https://img.shields.io/badge/WordPress-tested%206.8-21759b.svg)
+![WordPress tested](https://img.shields.io/badge/WordPress-tested%207.0-21759b.svg)
 ![Requires PHP](https://img.shields.io/badge/PHP-7.4%2B-777bb4.svg)
 
 A lightweight WordPress plugin that adds resource hints (`rel=preload`) so the browser fetches your most important assets sooner.

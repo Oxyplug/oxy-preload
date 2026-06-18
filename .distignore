@@ -1,0 +1,16 @@
+DEVELOPER.md
+
+# Development & test tooling — not part of the published plugin
+tests
+composer.json
+composer.lock
+phpunit.xml
+.phpunit.cache
+.phpunit.result.cache
+vendor
+
+# Front-end build tooling (vite) — not needed at runtime
+package.json
+package-lock.json
+vite.config.js
+node_modules
