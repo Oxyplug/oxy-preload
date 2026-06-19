@@ -85,6 +85,15 @@ assets/images/           Icons used in the admin UI
 
 See [`readme.txt`](readme.txt) for the full changelog. Latest:
 
+### 2.2.1
+- Exclude development, test, and build files from the published plugin package to reduce its size.
+
+### 2.2.0
+- Declare a font MIME type (`type=`) on font preloads to avoid a double font download in some browsers.
+- Add an uninstall routine and deactivation cleanup that remove the `.htaccess` preload block and plugin options.
+- Security: require the `manage_options` capability in the preload save handler.
+- Fix featured-image preload escaping (`esc_url`) and a PHP warning on servers that don't set `SERVER_SOFTWARE`.
+
 ### 2.1.5
 - Add translations for Spanish, French, German, Italian, and Brazilian Portuguese.
 - Load the plugin text domain so bundled translations are applied.
