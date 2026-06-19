@@ -4,7 +4,7 @@ Tags: lcp, core web vital, preload, resource hint, seo
 Requires at least: 4.9
 Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 2.2.0
+Stable tag: 2.2.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -26,6 +26,9 @@ You can also manually preload fonts, CSS, and JavaScript files in the settings f
 6. Featured image preload tag.
 
 == Changelog ==
+= 2.2.1 =
+*Exclude development, test, and build files from the published plugin package to reduce its size*
+
 = 2.2.0 =
 *Declare a font MIME type on font preloads to avoid a double font download in some browsers*
 *Add an uninstall routine that removes the .htaccess preload block and plugin options*

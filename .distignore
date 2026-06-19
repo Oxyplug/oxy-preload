@@ -1,6 +1,22 @@
-DEVELOPER.md
+# Files excluded from the published WordPress.org plugin package.
+# Consumed by 10up/action-wordpress-plugin-deploy (see .github/workflows/wp-deploy.yml).
 
-# Development & test tooling — not part of the published plugin
+# Repository & CI metadata
+.distignore
+.gitignore
+.github
+.git
+
+# Internal docs (the published plugin uses readme.txt, not README.md)
+README.md
+DEVELOPER.md
+preload-SUGGESTIONS.md
+
+# WordPress.org listing assets (banners/icons/screenshots) — deployed to the
+# SVN /assets directory separately, not shipped inside the plugin.
+wporg-assets
+
+# Development & test tooling
 tests
 composer.json
 composer.lock
@@ -9,8 +25,13 @@ phpunit.xml
 .phpunit.result.cache
 vendor
 
-# Front-end build tooling (vite) — not needed at runtime
+# Front-end build tooling and sources (only assets/js/dist is loaded at runtime)
 package.json
 package-lock.json
 vite.config.js
 node_modules
+assets/js/src
+
+# OS junk
+.DS_Store
+Thumbs.db
