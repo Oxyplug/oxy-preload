@@ -3,7 +3,7 @@
  * Plugin Name: Oxyplug Preload
  * Plugin URI: https://www.oxyplug.com/products/oxy-preload
  * Description: Preload post/page featured images and product images to enhance the Largest Contentful Paint (LCP) and achieve a better Core Web Vitals (CWV) score in Google's Lighthouse. Additionally, the tool supports preloading fonts, CSS, and JavaScript files when specified manually, allowing for even greater optimization of page load performance.
- * Version: 2.2.1
+ * Version: 2.2.2
  * Author: Oxyplug
  * Author URI: https://www.oxyplug.com
  * Requires PHP: 7.4
