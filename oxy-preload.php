@@ -8,7 +8,7 @@
  * Author URI: https://www.oxyplug.com
  * Requires PHP: 7.4
  * Requires at least: 4.9
- * Tested up to: 7.0
+ * Tested up to: 7.1
  * Text Domain: oxyplug-preload
  * Domain Path: /lang/
  * License: GPL v2 or later
