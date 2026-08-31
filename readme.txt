@@ -2,9 +2,9 @@
 Contributors: oxyplug
 Tags: lcp, core web vital, preload, resource hint, seo
 Requires at least: 4.9
-Tested up to: 7.0
+Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 2.2.1
+Stable tag: 2.2.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -26,6 +26,9 @@ You can also manually preload fonts, CSS, and JavaScript files in the settings f
 6. Featured image preload tag.
 
 == Changelog ==
+= 2.2.2 =
+*Tested up to WordPress 7.1*
+
 = 2.2.1 =
 *Exclude development, test, and build files from the published plugin package to reduce its size*
 
